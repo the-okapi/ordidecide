@@ -10,7 +10,7 @@
 </script>
 
 <!-- svelte-ignore a11y-media-has-caption -->
-<video autoplay height="567">
+<video autoplay height="567" loop>
     <source src={video} type="video/mp4">
     Your browser does not support the video tag
 </video>

@@ -12,20 +12,33 @@ export function check(one, two, three, four) {
     const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     const letter = alphabet[Math.floor(Math.random() * 26)];
 
-    let valid = [];
-    if (Boolean(Math.round(Math.random())) || oneLow.includes(letter)) {
-        valid.push(true);
+    let accepts = [];
+    let contains = [];
+    if (Boolean(Math.round(Math.random()))) {
+        accepts.push(true);
     }
-    if (Boolean(Math.round(Math.random())) || twoLow.includes(letter)) {
-        valid.push(true);
+    if (Boolean(Math.round(Math.random()))) {
+        accepts.push(true);
     }
-    if (Boolean(Math.round(Math.random())) || threeLow.includes(letter)) {
-        valid.push(true)
+    if (Boolean(Math.round(Math.random()))) {
+        accepts.push(true)
     }
-    if (Boolean(Math.round(Math.random())) || fourLow.includes(letter)) {
-        valid.push(true)
+    if (Boolean(Math.round(Math.random()))) {
+        accepts.push(true)
     }
-    if (valid.length > 2) {
+    if (oneLow.includes(letter)) {
+        contains.push(true);
+    }
+    if (twoLow.includes(letter)) {
+        contains.push(true);
+    }
+    if (threeLow.includes(letter)) {
+        contains.push(true);
+    }
+    if (fourLow.includes(letter)) {
+        contains.push(true);
+    }
+    if (accepts.length > 3 || contains.length > 2) {
         return true
     } else {
         window.location.assign("/rickroll")
